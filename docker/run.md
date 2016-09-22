@@ -2,6 +2,7 @@
 
 ###运行：docker run -dit -m 512m -p 6379:6379 kingaric/redis  
 ```shell
+error:
 WARNING: Your kernel does not support swap limit capabilities, memory limited without swap.
       
 原因没有开启cgroups中的swap account，解决办法如下：
