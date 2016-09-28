@@ -6,5 +6,5 @@ error:
 Failed to get D-Bus connection: Operation not permitted 
 
 解决方法：
-docker run -d --privileged -v /sys/fs/cgroup:/sys/fs/cgroup:ro centos:7 init 
+docker run --privileged  -dti -e "container=docker"  -v /sys/fs/cgroup:/sys/fs/cgroup:ro centos:7 init 
 ```
