@@ -42,3 +42,24 @@
       
 ###tornado/speedups.c:2:20: fatal error: Python.h: No such file or directory
 解决办法： sudo apt-get install python-dev　或者 sudo apt-get install python3-dev
+
+
+###/usr/include/python2.7/Python.h:19:20: fatal error: limits.h: No such file or directory
+解决方案：Alpine linux uses musl libc. You probably need to install musl-dev.即 apk add musl-dev 
+
+
+
+###/usr/lib/gcc/x86_64-alpine-linux-musl/4.8.3/../../../../x86_64-alpine-linux-musl/bin/ld: cannot find -lgcc_s
+解决方案：　apk add linux-headers libgcc
+
+
+
+###SSLError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed (_ssl.c:590)
+解决方案：
+
+
+### No module named singledispatch
+解决方案： pip install singledispatch
+
+### No module named singledispatch
+解决方案： pip install backports_abc
