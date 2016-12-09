@@ -40,3 +40,5 @@
       如果涉及到中文只需将utf-8修改为gb2312 即可。
       
       
+###tornado/speedups.c:2:20: fatal error: Python.h: No such file or directory
+解决办法： sudo apt-get install python-dev　或者 sudo apt-get install python3-dev
