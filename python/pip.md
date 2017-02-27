@@ -63,3 +63,26 @@
 
 ### No module named singledispatch
 解决方案： pip install backports_abc
+
+### pip list异常
+```shell
+Exception:
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/pip/basecommand.py", line 122, in main
+    status = self.run(options, args)
+  File "/usr/lib/python2.7/dist-packages/pip/commands/list.py", line 80, in run
+    self.run_listing(options)
+  File "/usr/lib/python2.7/dist-packages/pip/commands/list.py", line 142, in run_listing
+    self.output_package_listing(installed_packages)
+  File "/usr/lib/python2.7/dist-packages/pip/commands/list.py", line 151, in output_package_listing
+    if dist_is_editable(dist):
+  File "/usr/lib/python2.7/dist-packages/pip/util.py", line 366, in dist_is_editable
+    req = FrozenRequirement.from_dist(dist, [])
+  File "/usr/lib/python2.7/dist-packages/pip/__init__.py", line 286, in from_dist
+    assert len(specs) == 1 and specs[0][0] == '=='
+AssertionError
+
+Storing debug log for failure in /tmp/tmp3VdLYx
+
+```
+解决办法：`pip install --upgrade distribute `
