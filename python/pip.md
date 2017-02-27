@@ -85,4 +85,18 @@ AssertionError
 Storing debug log for failure in /tmp/tmp3VdLYx
 
 ```
-解决办法：`pip install --upgrade distribute `
+解决办法：
+* 方法1. `pip install --upgrade distribute `
+* 方法2. 
+```
+pip --version # 1.5.4
+curl -O https://bootstrap.pypa.io/get-pip.py
+sudo python get-pip.py
+pip --version # 6.0.8
+hash -r # reset bash cache
+```
+* 方法3.
+```
+pip install -U setuptools
+pip install -U pip
+```
