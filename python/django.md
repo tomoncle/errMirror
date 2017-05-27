@@ -1,4 +1,9 @@
-#django开发异常
+# django开发异常
+
+### Header values can't contain newlines (got '=?utf-8?b?YXR0YWNobWVudDsgZmlsZW5hbWU96Zi/6YeM5be05be0SmF2YeW8gOWPkeaJi+WG?=\n =?utf-8?b?jHYxLjIuMC5wZGY=?=')
+> 下载响应头部错误 django download error;
+
+解决方法：下载的文件含有中文转码为UTF-8: file_name.encode('utf-8')
 
 ### 'id' can only be used as a field name if the field also sets 'primary_key=True'. 
 ```shell
