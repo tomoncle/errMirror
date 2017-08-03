@@ -1,0 +1,2 @@
+# exceptionsLib
+Exception Library
