@@ -20,7 +20,8 @@ sys.setdefaultencoding('utf8')
 pytz.exceptions.UnknownTimeZoneError: ''
 ```
 解决办法：
->　`vim /usr/lib/python2.7/dist-packages/pytz/__init__.py +170`
+> 编辑 `/usr/lib/python2.7/dist-packages/pytz/__init__.py` 第170行．
+将`raise UnknownTimeZoneError(zone)`改为`return`
 ```python
 if zone in all_timezones_set:
     fp = open_resource(zone)
