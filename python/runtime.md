@@ -1,5 +1,6 @@
 # python runtime exception
 
+---
 ### UnicodeDecodeError: 'ascii' codec can't decode byte 0xe6 in position 49: ordinal not in range(128)
 
 解决办法,在python文件头部引用以下代码：
@@ -9,6 +10,7 @@ reload(sys)
 sys.setdefaultencoding('utf8') 
 ```
 
+---
 ###  File "/usr/local/lib/python2.7/dist-packages/tzlocal/unix.py", line 123, in get_localzone
 ```bash
   File "/usr/local/lib/python2.7/dist-packages/tzlocal/unix.py", line 123, in get_localzone
@@ -32,4 +34,11 @@ if zone in all_timezones_set:
 else:
     return
     # raise UnknownTimeZoneError(zone)
+```
+
+---
+### cannot import name OrderedDict
+> 这个问题在`python 2.7.8`和`kombu 4.0.x`下会出现， 替换`kombu`为`3.0.x`．
+```bash
+$ sudo pip install kombu==3.0.36
 ```
