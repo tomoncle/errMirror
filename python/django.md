@@ -49,5 +49,10 @@ def is_connection_usable():
  
  ```
  
+### ValueError: Lookup failed for model referenced by field compute.instance.monitor_id: policy.models.Monitor
+```
+$ rm -rf compute/instance/000*.pyc
+$ python manage.py makemigrations
+```
  
  
