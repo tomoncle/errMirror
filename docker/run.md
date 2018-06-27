@@ -1,6 +1,6 @@
-#docker run常见异常记录
+# docker run常见异常记录
 
-###运行：docker run -dit -m 512m -p 6379:6379 kingaric/redis  
+### 运行：docker run -dit -m 512m -p 6379:6379 kingaric/redis  
 ```shell
 error:
 WARNING: Your kernel does not support swap limit capabilities, memory limited without swap.
