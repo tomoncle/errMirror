@@ -79,6 +79,31 @@ sys.setdefaultencoding('utf8')
 ```
 解决方案： pip install backports_abc
 ```
+### Error loading MySQLdb module: No module named MySQLdb
+```
+解决方案： sudo pip install MySQL-python
+```
+### pip install MySQL-python==1.2.3
+```
+Collecting MySQL-python==1.2.3 (from -r r.txt (line 12))
+  Downloading https://files.pythonhosted.org/packages/9a/81/924d6799494cf7fb24370335c2f782088d6ac4f79e4137d4df94cea3582c/MySQL-python-1.2.3.tar.gz (70kB)
+    100% |████████████████████████████████| 71kB 63kB/s
+    Complete output from command python setup.py egg_info:
+    sh: mysql_config: not found
+    Traceback (most recent call last):
+      File "<string>", line 1, in <module>
+      File "/tmp/pip-install-MFHfIW/MySQL-python/setup.py", line 15, in <module>
+        metadata, options = get_config()
+      File "setup_posix.py", line 43, in get_config
+        libs = mysql_config("libs_r")
+      File "setup_posix.py", line 24, in mysql_config
+        raise EnvironmentError("%s not found" % (mysql_config.path,))
+    EnvironmentError: mysql_config not found
+
+    ---------------------------------------
+```
+* ubuntu: `$ sudo apt install libmysqlclient-dev python-dev`
+* alpine: `$ apk add mariadb-dev mariadb-client mariadb-libs`
 
 ### pip list异常
 ```shell
