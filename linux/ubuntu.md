@@ -11,3 +11,10 @@ $ sudo apt-get install indicator-datetime
 $ sudo dpkg-reconfigure --frontend noninteractive tzdata 
 $ sudo killall unity-panel-service
 ```
+
+## ModuleNotFoundError: No module named 'apt_pkg'
+
+* `$ sudo apt-get remove --purge python-apt`
+* `$ sudo apt-get install python-apt --fix-missing`
+* `$ cd /usr/lib/python3/dist-packages`
+* `$ sudo cp apt_pkg.cpython-34m-x86_64-linux-gnu.so apt_pkg.so`
