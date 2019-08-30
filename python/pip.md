@@ -141,3 +141,40 @@ hash -r # reset bash cache
 pip install -U setuptools
 pip install -U pip
 ```
+
+### pip2.7 install 
+```
+Traceback (most recent call last):
+  File "/usr/local/bin/pip2.7", line 6, in <module>
+    from pip._internal import main
+  File "/usr/local/lib/python2.7/dist-packages/pip/_internal/__init__.py", line 40, in <module>
+    from pip._internal.cli.autocompletion import autocomplete
+  File "/usr/local/lib/python2.7/dist-packages/pip/_internal/cli/autocompletion.py", line 8, in <module>
+    from pip._internal.cli.main_parser import create_main_parser
+  File "/usr/local/lib/python2.7/dist-packages/pip/_internal/cli/main_parser.py", line 12, in <module>
+    from pip._internal.commands import (
+  File "/usr/local/lib/python2.7/dist-packages/pip/_internal/commands/__init__.py", line 6, in <module>
+    from pip._internal.commands.completion import CompletionCommand
+  File "/usr/local/lib/python2.7/dist-packages/pip/_internal/commands/completion.py", line 6, in <module>
+    from pip._internal.cli.base_command import Command
+  File "/usr/local/lib/python2.7/dist-packages/pip/_internal/cli/base_command.py", line 20, in <module>
+    from pip._internal.download import PipSession
+  File "/usr/local/lib/python2.7/dist-packages/pip/_internal/download.py", line 15, in <module>
+    from pip._vendor import requests, six, urllib3
+  File "/usr/local/lib/python2.7/dist-packages/pip/_vendor/requests/__init__.py", line 97, in <module>
+    from pip._vendor.urllib3.contrib import pyopenssl
+  File "/usr/local/lib/python2.7/dist-packages/pip/_vendor/urllib3/contrib/pyopenssl.py", line 46, in <module>
+    import OpenSSL.SSL
+  File "/usr/lib/python2.7/dist-packages/OpenSSL/__init__.py", line 8, in <module>
+    from OpenSSL import rand, crypto, SSL
+  File "/usr/lib/python2.7/dist-packages/OpenSSL/SSL.py", line 118, in <module>
+    SSL_ST_INIT = _lib.SSL_ST_INIT
+AttributeError: 'module' object has no attribute 'SSL_ST_INIT'
+```
+* 解决：
+```
+$ sudo rm -rf /usr/lib/python2.7/dist-packages/OpenSSL
+$ sudo rm -rf /usr/lib/python2.7/dist-packages/pyOpenSS*
+$ sudo pip2.7 install pyopenssl
+```
+
